@@ -153,4 +153,4 @@ store in mfcc variable</p>
 <p>In the above image we can see two images first one is called wave plot that indicates the voice transmission over time and another one is called spectrogram which is like a heatmap and here we used to plot MFCC over time. Here red color indicate high intensity and blue indicates low intensity.</p>
 <p>Now we are using this feature in our model building and training</p>
 <h3 id='credits'>Credits:</h3> 
-<p>My spacial thanks goes to <b>Eu Jin Lok</b> who is a Kaggle grandmaster, whose notebook helped me to understand how to work with the speech dataset. From his notebook itself, I can able to understand various features and data augmentation techniques involved in speech data.</p>
+<p>My special thanks go to <b>Eu Jin Lok</b> who is a Kaggle grandmaster, whose notebook helped me to understand how to work with the speech dataset. From his notebook itself, I can able to understand various features and data augmentation techniques involved in speech data.</p>
