@@ -4,8 +4,8 @@
 <li><a href='#intro'>Introduction</a></li>
 <li><a href='#cnn'>Understanding CNN</a></li>
 <li><a href='#voiceFeature'>Feature Engineering for Voice Data</a></li>
-<li><a href='#'>Model creation and Evaluation</a></li>
-<li><a href='#'>Prediction</a></li>
+<li><a href='#modeling'>Model creation and Evaluation</a></li>
+<li><a href='#prediction'>Prediction</a></li>
 <li><a href='#'>Conclusion</a></li>
 <li><a href='#credits'>Credits</a></li>
 </ul>
@@ -127,7 +127,7 @@ data frame.</b></p></ol>
 
 
 <h3 id='voiceFeature'>Feature Engineering for Voice Data</h3><p>In the previous section we discusses about all the different datasets and speech that we merged together and created a data frame. The data frame consist for a path for a file having speech(.wav) data. But this kind of data
-is called unstructured data and we cannot able to work computationally that's why we need to extract some features that help us to build the model. There are lots of features which we can get from an audio data such as:</p>
+is called unstructured data and we cannot able to work computationally that's why we need to extract some features that help us to build the model. There are lots of features which we can get from audio data such as:</p>
 <ul>
 <li>Spectral Centroid</li>
 <li>Zero Crossing Rate</li>
@@ -152,5 +152,34 @@ store in mfcc variable</p>
 <img src='feature_specshow.png'/>
 <p>In the above image we can see two images first one is called wave plot that indicates the voice transmission over time and another one is called spectrogram which is like a heatmap and here we used to plot MFCC over time. Here red color indicate high intensity and blue indicates low intensity.</p>
 <p>Now we are using this feature in our model building and training</p>
+<h3 id='modeling'>Model Creation and Evaluation</h3>
+<p>We train our model based on different algorithms such as Conv1D, Conv2D, etc so let's check how accurate our model trained.</p>
+<h4>Conv1D model:</h4>
+<p>In this model we have used 8 Conv1D layers, 8 Relu activation layers,2 Dropout layers as our hidden layer and based on these layers when we train our model for around 75 epochs we get around 99% accuracy. See the following graph.</p>
+<img src='conv1accu.png' align='center'/>
+<h4>Conv2D Model:</h4>
+<p>In Conv2D model we uses 4 layers of Conv2D, Max Pooling, Batch Normalization and Relu activation as our hidden layers and based these we get accuracy around 87% which is quite good. See the following graph<p>
+<img src='conv2accu.png'  align='center' />
+<h4>Data Augmentation:</h4>
+<p>I also explore some data augmentation techniques for speech data that we can used to improve our data size.</p>
+<p>Some data augmentation techniques are the following</p>
+<ul>
+<li>Adding White Noise</li>
+<li>Random Shifting</li>
+<li>Streching the Sound</li>
+<li>Pitch Tuning</li>
+<li>Random Value Change</li>
+<li>peed and Pitch Tuning</li>
+</ul>
+<p>from the above list of data augmentation techniques I have used <i>"Stretch" and "Dynamic change"</i> in our model but the result is not that much change so I keep my model simple without giving more data to it.</p>
+<h3 id='prediction'>Prediction</h3>
+<p>Let's Now check the model whether it's performing good or not. So I decided to add my voice in it and check whether it perform correctly or not.</p>
+<img src='myvoice.png'/>
+<p>It's my voice saying "THIS IS SO GREAT"</p>
+<p>And after prediction I got this...</p>
+<img src='myvoicepred.PNG'/>
+<p>So clearly the prediction is <b>Male_Happy</b> which is absolutly correct result.</p>
+<h3 id='conclusion'>Conclusion</h3>
+<p>In this project I explore the Speech Data and learn some fundamentals of voice features, such as MFCC and Specgram visualization technique. In the future I will try to create a web-based application that can be used by the end-user</p> 
 <h3 id='credits'>Credits:</h3> 
 <p>My special thanks go to <b>Eu Jin Lok</b> who is a Kaggle grandmaster, whose notebook helped me to understand how to work with the speech dataset. From his notebook itself, I can able to understand various features and data augmentation techniques involved in speech data.</p>
